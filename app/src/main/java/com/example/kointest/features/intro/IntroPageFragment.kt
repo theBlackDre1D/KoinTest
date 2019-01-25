@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_intro_page.view.*
+import kotlinx.android.synthetic.main.fragment_intro_page.*
 
 class IntroPageFragment: BaseFragment() {
 
@@ -21,9 +21,12 @@ class IntroPageFragment: BaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_intro_page, container, false)
-        rootView.introImage.setImageResource(imageResID!!)
+        return inflater.inflate(R.layout.fragment_intro_page, container, false)
+    }
 
-        return rootView
+    override fun setupUI() {
+        super.setupUI()
+
+        introImage.setImageResource(imageResID!!)
     }
 }

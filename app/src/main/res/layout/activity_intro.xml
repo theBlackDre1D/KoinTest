@@ -4,7 +4,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".features.intro.IntroActivity">
+        tools:context=".features.intro.IntroActivity"
+        android:background="@drawable/background_gradient"
+>
 
     <!--<FrameLayout-->
             <!--android:id="@+id/fragmentContainer"-->
@@ -13,12 +15,14 @@
             <!--android:layout_marginBottom="50dp"-->
     <!--/>-->
     <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/footer_height"
+            android:layout_marginBottom="250dp"
     />
 
     <include
+            android:id="@+id/footer"
             layout="@layout/intro_footer"
             android:layout_alignParentBottom="true"
             android:layout_height="@dimen/footer_height"

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseActivity
+import com.example.kointest.core.extentions.simpleReplace
 
 class MainActivity : BaseActivity() {
 
@@ -18,6 +19,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val transaction = supportFragmentManager.beginTransaction()
 
+        transaction.simpleReplace(R.id.fragmentContainer, MainFragment.newInstance(), true)
     }
 }

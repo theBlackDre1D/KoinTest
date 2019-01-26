@@ -10,5 +10,9 @@ class GetTextViewModel(private val getText: GetRandomText): ViewModel() {
 
     fun getLiveData() = liveData
 
-    fun loadData(params: GetRandomText.Params) = getText(params)
+    fun loadData(params: GetRandomText.Params) = getText(params) { handleRespond(it) }
+
+    private fun handleRespond(data: String) {
+        liveData.value = data
+    }
 }

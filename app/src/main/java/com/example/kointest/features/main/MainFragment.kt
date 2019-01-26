@@ -19,7 +19,7 @@ class MainFragment: BaseFragment() {
         }
     }
 
-    val getRandomTextViewModel: GetTextViewModel by viewModel()
+    private val getRandomTextViewModel: GetTextViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -33,6 +33,14 @@ class MainFragment: BaseFragment() {
         })
 
         getRandomTextViewModel.loadData(GetRandomText.Params(0))
+
+        setupButton()
+    }
+
+    private fun setupButton() {
+        nextText.setOnClickListener {
+            getRandomTextViewModel.loadData(GetRandomText.Params(0))
+        }
     }
 
 }

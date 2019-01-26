@@ -2,7 +2,7 @@ package com.example.kointest.features.main.repository
 
 class TextRepositoryImp: TextRepository {
     override fun getText(): String {
-        val randomNumber = (0..5).random()
+        val randomNumber = (0..4).random()
         val textArray = listOf(
                 "1 -Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 "2 -Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

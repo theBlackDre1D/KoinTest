@@ -1,8 +1,9 @@
-package com.example.kointest
+package com.example.kointest.features.main
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import com.example.kointest.R
 import com.example.kointest.core.base.BaseActivity
 
 class MainActivity : BaseActivity() {

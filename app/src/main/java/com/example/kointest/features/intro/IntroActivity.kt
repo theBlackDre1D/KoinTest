@@ -3,7 +3,7 @@ package com.example.kointest.features.intro
 import android.os.Bundle
 import android.view.View
 import androidx.viewpager.widget.ViewPager
-import com.example.kointest.MainActivity
+import com.example.kointest.features.main.MainActivity
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseActivity
 import com.example.kointest.features.intro.adapter.IntroPageAdapter

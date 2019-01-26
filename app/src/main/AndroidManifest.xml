@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-                android:name=".MainActivity"
+                android:name=".features.main.MainActivity"
                 android:launchMode="singleTask"
         >
 

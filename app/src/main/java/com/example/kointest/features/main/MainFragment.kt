@@ -1,4 +1,4 @@
-package com.example.kointest.features
+package com.example.kointest.features.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

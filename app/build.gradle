@@ -24,6 +24,7 @@ android {
 
 ext {
     koin_version = '1.0.2'
+    kotlin_coroutines_version = '1.0.1'
 }
 
 dependencies {
@@ -48,5 +49,8 @@ dependencies {
     implementation 'com.github.trendyol:medusa:0.4.1'
     implementation 'com.github.GrenderG:Toasty:1.4.0'
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
 
 }

@@ -1,6 +1,11 @@
 package com.example.kointest.features.main.repository
 
-class TextRepositoryImp: TextRepository {
+import android.content.Context
+import com.example.kointest.core.database.NoteDao
+import com.example.kointest.core.database.NoteEntity
+import com.example.kointest.core.database.NotesDatabase
+
+class TextRepositoryImp constructor(val noteDao: NoteDao): TextRepository {
     override fun getText(): String {
         val randomNumber = (0..4).random()
         val textArray = listOf(
@@ -12,5 +17,11 @@ class TextRepositoryImp: TextRepository {
             )
 
         return textArray[randomNumber]
+    }
+
+    override fun getNoteFromDatabase(context: Context): List<NoteEntity> {
+//        val db = NotesDatabase.invoke(context)
+//        return db.noteDAO().getAllNotes()
+        return noteDao.getAllNotes()
     }
 }

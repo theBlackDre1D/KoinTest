@@ -1,6 +1,7 @@
 package com.example.kointest.features.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,8 +32,12 @@ class MainFragment: BaseFragment() {
         getRandomTextViewModel.getLiveData().observe(this, Observer {
             mainText.text = it
         })
-
         getRandomTextViewModel.loadData(GetRandomText.Params(0))
+
+        getRandomTextViewModel.getLiveNotes().observe(this, Observer {
+            dbText.text = it.count().toString()
+        })
+        getRandomTextViewModel.loadNotes(GetNotesFromDatabase.Params(activity!!.applicationContext))
 
         setupButton()
     }

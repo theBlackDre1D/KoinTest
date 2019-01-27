@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -25,6 +27,7 @@ android {
 ext {
     koin_version = '1.0.2'
     kotlin_coroutines_version = '1.0.1'
+    room_version = "2.1.0-alpha03"
 }
 
 dependencies {
@@ -36,15 +39,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
 
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
-//    implementation "org.koin:koin-android-scope:$koin_version"
-//    implementation "org.koin:koin-android-viewmodel:$koin_version"
+//    implementation "org.koin:koin-android-architecture:$koin_version"
 
 //    android X
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
+
+//    Room
+//    implementation 'android.arch.persistence.room:runtime:1.1.1'
+//    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
 
     implementation 'com.github.trendyol:medusa:0.4.1'
     implementation 'com.github.GrenderG:Toasty:1.4.0'

@@ -6,6 +6,9 @@ import android.os.Bundle
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseActivity
 import com.example.kointest.core.extentions.simpleReplace
+import com.example.kointest.core.navigation.Navigation
+import com.example.kointest.features.add_note.SecondFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
@@ -19,8 +22,22 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setupUI()
+
         val transaction = supportFragmentManager.beginTransaction()
 
         transaction.simpleReplace(R.id.fragmentContainer, MainFragment.newInstance(), true)
+    }
+
+    override fun setupUI() {
+        super.setupUI()
+
+        setupOnClickListeners()
+    }
+
+    private fun setupOnClickListeners() {
+        goToAddNote.setOnClickListener {
+            Navigation.switchFragments(this, R.id.fragmentContainer, SecondFragment.newInstance())
+        }
     }
 }

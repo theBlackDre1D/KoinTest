@@ -6,7 +6,7 @@ import com.example.kointest.core.database.NoteEntity
 import com.example.kointest.features.main.GetNotesFromDatabase
 import com.example.kointest.features.main.GetRandomText
 
-class GetTextViewModel constructor(private val getText: GetRandomText,
+class GetTextViewModel(private val getText: GetRandomText,
                        private val getNotes: GetNotesFromDatabase): ViewModel() {
 
     private val liveData = MutableLiveData<String>()

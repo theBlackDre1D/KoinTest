@@ -7,4 +7,6 @@ interface TextRepository {
     fun getText(): String
 
     fun getNoteFromDatabase(context: Context): List<NoteEntity>
+
+    fun addNote(note: NoteEntity): Long
 }

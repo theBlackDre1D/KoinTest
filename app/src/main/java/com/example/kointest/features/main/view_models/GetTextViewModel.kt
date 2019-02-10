@@ -26,4 +26,10 @@ class GetTextViewModel(private val getText: GetRandomText,
     private fun handleNotes(data: List<NoteEntity>) {
         liveNotes.value = data
     }
+
+    override fun onCleared() {
+        super.onCleared()
+
+        getText.getJob().cancel()
+    }
 }

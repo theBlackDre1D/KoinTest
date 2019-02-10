@@ -1,6 +1,5 @@
 package com.example.kointest.core.navigation
 
-import android.graphics.drawable.DrawableContainer
 import com.example.kointest.core.base.BaseActivity
 import com.example.kointest.core.base.BaseFragment
 import com.example.kointest.core.extentions.simpleReplace

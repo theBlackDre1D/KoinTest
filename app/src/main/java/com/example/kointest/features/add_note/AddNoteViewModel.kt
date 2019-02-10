@@ -16,4 +16,10 @@ class AddNoteViewModel(private val addNewNote: AddNewNote): ViewModel() {
     private fun handleRespond(rowID: Long) {
         liveData.value = rowID
     }
+
+    override fun onCleared() {
+        super.onCleared()
+
+        addNewNote.getJob().cancel()
+    }
 }

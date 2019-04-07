@@ -10,8 +10,8 @@ import com.example.kointest.features.main.repository.TextRepository
 import com.example.kointest.features.main.repository.TextRepositoryImp
 import com.example.kointest.features.main.view_models.GetTextViewModel
 import org.koin.android.ext.koin.androidApplication
-import org.koin.androidx.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 val modules = module {
 

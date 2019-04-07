@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment: Fragment() {
 
+    abstract val layoutResource: Int
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(layoutResource, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

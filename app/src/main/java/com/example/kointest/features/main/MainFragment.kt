@@ -1,10 +1,5 @@
 package com.example.kointest.features.main
 
-import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseFragment
@@ -14,6 +9,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment: BaseFragment() {
 
+    override val layoutResource: Int
+        get() = R.layout.fragment_main
+
     companion object {
         fun newInstance(): MainFragment {
             return MainFragment()
@@ -22,9 +20,6 @@ class MainFragment: BaseFragment() {
 
     private val getRandomTextViewModel: GetTextViewModel by viewModel()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
-    }
 
     override fun setupUI() {
         super.setupUI()

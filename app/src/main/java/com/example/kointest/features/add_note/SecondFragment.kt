@@ -1,9 +1,7 @@
 package com.example.kointest.features.add_note
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.kointest.R
 import com.example.kointest.core.base.BaseFragment
@@ -14,16 +12,15 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SecondFragment: BaseFragment() {
 
+    override val layoutResource: Int
+        get() = R.layout.fragment_second
+
     private val addNoteViewModel: AddNoteViewModel by viewModel()
 
     companion object {
         fun newInstance(): SecondFragment {
             return SecondFragment()
         }
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
